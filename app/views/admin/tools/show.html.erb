@@ -1,0 +1,9 @@
+<h1><%= @tool.name %> - <%= @tool.quantity %></h1>
+<h2> <%= @tool.user.username %> </h2>
+<h3>$<%= @tool.price %></h3>
+<h3><%= link_to @tool.category.name, category_path(@tool.category) %></h3>
+<p> <%= link_to "Edit Tool", edit_admin_tool_path(@tool) %> </p>
+<p> <%= link_to "All Tools", admin_tools_path %> </p>
+<br>
+<br>
+<%= button_to "Delete", admin_tool_path(@tool), method: :delete %>

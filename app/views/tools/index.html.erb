@@ -1,0 +1,10 @@
+<h1> <%= current_user.username %>'s Tool Index </h1>
+<% @tools.each do |tool| %>
+  <% if tool.user.id == current_user.id %>
+    <p> <%= link_to tool.name, user_tool_path(current_user.id, tool) %> - <%= tool.quantity %> </p>
+  <% end %>
+<% end %>
+
+<%= link_to "Create Tool", new_user_tool_path(current_user.id) %>
+<br>
+<%= link_to "Most Recent Tool", user_tool_path(current_user.id, most_recent_tool) %>

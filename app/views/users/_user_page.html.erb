@@ -1,0 +1,8 @@
+<h1><%= current_user.username %>'s Homepage</h1>
+
+<%= link_to "Create a Tool", new_user_tool_path(current_user.id) %>
+<br>
+<%= link_to "View Tools", user_tools_path(current_user.id) %>
+<p>
+  <%= link_to "Edit User", edit_user_path(current_user) %>
+</p>
